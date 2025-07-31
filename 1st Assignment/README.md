@@ -1,9 +1,9 @@
-*Security Audit Report: Full Port Scan on testphp.vulnweb.com
- *Goal
+Security Audit Report: Full Port Scan on testphp.vulnweb.com
+ Goal
 The goal of this scan was simple:
 Check every single one of the 65,535 TCP ports on testphp.vulnweb.com to make sure no service is hiding in plain sight. We're doing a full security sweep — no shortcuts.
 
- *Tools Used
+ Tools Used
 Nmap – Industry-standard port scanner
 
 Bash – For automating the scan
@@ -123,5 +123,5 @@ TARGET="testphp.vulnweb.com"
 OUTPUT="full_port_scan_output.txt"
 echo "[*] Starting full TCP port scan on $TARGET..."
 nmap -p- -T4 -v $TARGET -oN "$OUTPUT"
-*Final Conclusion
+Final Conclusion
 A full port scan of testphp.vulnweb.com revealed that while common services like SSH and HTTP were expected, critical services such as MySQL and a potential development interface on port 8888 were also exposed — highlighting how important it is to scan every port, not just the usual suspects. This approach ensures hidden or misconfigured services don't go unnoticed, reinforcing the need for thoroughness in every security audit.
